@@ -12,9 +12,13 @@ const NavigationRight = () => {
 
   return (
     <nav className="fixed right-8 top-1/2 -translate-y-1/2 z-50">
-      <div className="flex flex-col gap-4 bg-white/70 backdrop-blur-xl p-3 rounded-full shadow-xl border border-white/20">
+      <div className="flex flex-col gap-4 bg-[var(--surface)]/70 backdrop-blur-xl p-3 rounded-full shadow-xl border border-[var(--border)]/20">
         {menu.map((item, i) => (
-          <a key={i} href={item.link} className="p-3 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-all duration-300">
+          <a
+            key={i}
+            href={item.link}
+            className="p-3 text-[var(--text-muted)] hover:text-[var(--accent)] hover:bg-[var(--accent)]/10 rounded-full transition-all duration-300"
+          >
             {item.icon}
           </a>
         ))}
