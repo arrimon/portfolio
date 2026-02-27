@@ -199,7 +199,7 @@ const Contact = () => {
           <ContactInfo
             icon={Phone}
             title="Phone"
-            value="+880 1XXX-XXXXXX"
+            value="+880 1871091229"
             color="bg-indigo-500"
           />
         </div>

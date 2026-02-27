@@ -78,22 +78,23 @@ const Hero = () => {
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-5">
 
-        {/* Primary */}
-        <button className="
-          group flex items-center justify-center gap-2
-          px-8 py-4
-          bg-[var(--accent)]
-          text-white
-          rounded-2xl
-          font-bold
-          hover:-translate-y-1
-          transition-all
-        ">
-          <Download size={20}
-            className="group-hover:animate-bounce"
-          />
-          Download Resume
-        </button>
+        <a
+            href="https://drive.google.com/uc?export=download&id=17fEeopL-O4BjqQ5NMXJmigRbOlqgdBRZ"
+            download
+            className="
+                group flex items-center justify-center gap-2
+                px-8 py-4
+                bg-[var(--accent)]
+                text-white
+                rounded-2xl
+                font-bold
+                hover:-translate-y-1
+                transition-all
+            "
+            >
+            <Download size={20} className="group-hover:animate-bounce" />
+            Download Resume
+        </a>
 
         {/* Secondary */}
         <button className="
