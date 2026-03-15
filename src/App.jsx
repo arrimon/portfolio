@@ -6,6 +6,7 @@ import NavigationRight from './components/NavigationRight';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -61,6 +62,10 @@ export default function App() {
 
         <motion.section id="skills" variants={sectionVariants} className="py-12">
           <Skills />
+        </motion.section>
+
+        <motion.section id="skills" variants={sectionVariants} className="py-12">
+          <Experience />
         </motion.section>
 
         <motion.section id="projects" variants={sectionVariants} className="py-12">

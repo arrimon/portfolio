@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 /* Contact Card */
 const ContactInfo = ({ icon: Icon, title, value, color }) => (
@@ -39,26 +40,12 @@ const Contact = () => {
     <div className="space-y-12">
 
       {/* Heading */}
-      <div className="text-center">
-        <h2 className="
-          text-4xl
-          font-extrabold
-          mb-2
-          text-[var(--text-primary)]
-        ">
-          Get in Touch
-        </h2>
-
-        <p className="text-[var(--text-muted)]">
-          Feel free to reach out for collaborations or just to say hi!
-        </p>
-
-        <div className="
-          w-12 h-1
-          bg-[var(--accent)]
-          mx-auto mt-4
-          rounded-full
-        " />
+      <div className="text-left">
+        <SectionHeader
+          number={6}
+          title="Contact"
+          description="Feel free to reach out for collaborations or just to say hi!"
+        />
       </div>
 
       {/* Layout */}

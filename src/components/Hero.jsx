@@ -1,10 +1,11 @@
+// components/Hero.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="max-w-4xl py-20 lg:py-0">
+    <div className="max-w-4xl pt-30 pb-16 lg:py-0">
 
       {/* Status Badge */}
       <motion.div
@@ -20,6 +21,7 @@ const Hero = () => {
           text-sm font-bold
           mb-8
           shadow-sm
+          animate-float
         "
       >
         <span className="relative flex h-2 w-2">

@@ -1,5 +1,7 @@
 import React from 'react';
 import profileImage from '../assets/arrimon.jpeg';
+import SectionHeader from './SectionHeader';
+import GitHubStats from "./GitHubStats";
 
 const DetailItem = ({ label, value }) => (
   <div className="space-y-1">
@@ -11,10 +13,11 @@ const DetailItem = ({ label, value }) => (
 const About = () => {
   return (
     <div className="space-y-8 md:space-y-12 py-20">
-      <div className="text-center">
+      {/* <div className="text-center">
         <h2 className="text-3xl md:text-4xl font-extrabold mb-2 text-[var(--text-primary)]">About Me</h2>
         <div className="w-12 h-1 bg-[var(--accent)] mx-auto rounded-full"></div>
-      </div>
+      </div> */}
+      <SectionHeader number={1} title="About Me" />
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
         
@@ -53,6 +56,7 @@ const About = () => {
           </p>
         </div>
       </div>
+      <GitHubStats username="arrimon" />
     </div>
   );
 };

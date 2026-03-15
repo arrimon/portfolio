@@ -96,6 +96,22 @@ body {
   opacity: 0.9;
 }
 
+/* ===============================
+   Light Theme Text Selection
+================================ */
+[data-theme="light"] ::selection {
+  background: #2563EB;   /* accent */
+  color: #FFFFFF;
+}
+
+/* ===============================
+   Dark Theme Text Selection
+================================ */
+[data-theme="dark"] ::selection {
+  background: #3B82F6;   /* accent */
+  color: #020617;
+}
+
 
 /* ======================================================
    SMOOTH THEME TRANSITION
@@ -126,4 +142,17 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
+}
+
+/* Skill Cards */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(-1deg); }
+  66% { transform: translateY(4px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  /* 8 seconds creates a very subtle, slow, premium feel */
+  animation: float 8s ease-in-out infinite;
 }
