@@ -1,38 +1,44 @@
+// src/components/Experience.jsx
 import React from 'react';
 import SectionHeader from './SectionHeader';
 import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
 
 const experienceData = [
   {
-    role: 'Frontend Developer',
+    role: 'Full Stack Developer (Frontend Focus)',
     company: 'Race Online Ltd',
     companyUrl: 'https://www.race.net.bd/',
     location: 'Dhaka, Bangladesh',
-    duration: 'Jan 2024 — Present',
+    duration: 'Jan 2025 — Present',
     type: 'Full-time',
     description: [
-      'Building and maintaining scalable frontend interfaces using React.js and modern CSS frameworks.',
-      'Collaborating with backend engineers to integrate REST APIs and deliver seamless user experiences.',
-      'Improved page load performance by 40% through code splitting and lazy loading strategies.',
+      'Developing and maintaining scalable web applications using React.js for the frontend and Laravel for backend services.',
+      'Designing responsive and accessible user interfaces with modern CSS frameworks to ensure seamless cross-device experiences.',
+      'Integrating RESTful APIs and optimizing data flow between frontend and backend systems.',
+      'Working with MySQL databases to manage application data efficiently and support backend functionality.',
+      'Improved application performance by implementing code splitting, lazy loading, and optimized component architecture.',
+      'Collaborating with cross-functional teams including backend developers and designers to deliver high-quality production features.'
     ],
-    tags: ['React.js', 'Tailwind CSS', 'REST API', 'Git'],
+    tags: ['React.js', 'Laravel', 'MySQL', 'Tailwind CSS', 'REST API', 'Git'],
     current: true,
   },
   {
-    role: 'Junior Web Developer',
-    company: 'Freelance & Open Source',
-    companyUrl: 'https://github.com/arrimon',
-    location: 'Remote',
-    duration: 'Jun 2022 — Dec 2023',
-    type: 'Freelance',
+    role: 'CRM Management',
+    company: 'Synesis IT Ltd',
+    companyUrl: 'https://synesisitltd.com/',
+    location: 'Dhaka, Bangladesh',
+    duration: 'Jan 2023 — Aug 2024',
+    type: 'Full-time',
     description: [
-      'Delivered 10+ client projects including e-commerce platforms, portfolios, and admin dashboards.',
-      'Worked across the full stack using Node.js, Express, and MongoDB alongside React frontends.',
-      'Established clean component architecture patterns adopted across multiple long-term projects.',
+      'Managed customer interactions and service requests through a CRM platform for Dhaka WASA operations.',
+      'Handled high-volume inbound and outbound customer communications, ensuring timely resolution of service inquiries.',
+      'Collected and organized customer information to maintain accurate records within the CRM system.',
+      'Assisted in tracking service issues, complaints, and feedback to support operational improvements.',
+      'Collaborated with internal teams to ensure efficient communication between customers and technical departments.'
     ],
-    tags: ['React.js', 'Node.js', 'MongoDB', 'Express'],
+    tags: ['CRM', 'Customer Support', 'Data Management', 'Communication'],
     current: false,
-  },
+  }
 ];
 
 const ExperienceCard = ({ data, index }) => {
@@ -157,7 +163,8 @@ const Experience = () => {
   return (
     <div id="experience" className="space-y-8 md:space-y-12 py-20">
       <SectionHeader
-        number={4}
+        number={3}
+        // number={4}
         title="Work Experience"
         description="Companies and roles where I've grown as an engineer."
       />

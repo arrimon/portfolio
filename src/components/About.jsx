@@ -56,7 +56,8 @@ const About = () => {
           </p>
         </div>
       </div>
-      <GitHubStats username="arrimon" />
+      {/* GuitHub Stats */}
+      {/* <GitHubStats username="arrimon" /> */}
     </div>
   );
 };
