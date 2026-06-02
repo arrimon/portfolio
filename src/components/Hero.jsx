@@ -36,7 +36,7 @@ const Hero = () => {
 
       {/* Headline */}
       <h1 className="
-        text-4xl md:text-6xl lg:text-8xl
+        text-4xl md:text-5xl lg:text-6xl xl:text-7xl
         font-black
         leading-[1.05]
         tracking-tight

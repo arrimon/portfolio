@@ -128,11 +128,11 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-20 px-6 max-w-7xl mx-auto">
+    <section className="py-20 px-6 max-w-5xl mx-auto">
       <SectionHeader number={2} title="Technical Skills & Stack" />
       {/* <SectionHeader number={3} title="Technical Skills & Stack" /> */}
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
         {skillsData.map((skill, index) => (
           <SkillTile key={skill.name} {...skill} index={index} />
         ))}

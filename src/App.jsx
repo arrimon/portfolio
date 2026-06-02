@@ -43,7 +43,7 @@ export default function App() {
         <ThemeToggle />
       </div>
 
-      <main className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:pl-[300px] lg:pr-[80px]">
+      <main className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:pl-[340px] lg:pr-[100px]">
 
         <motion.section
           id="home"
