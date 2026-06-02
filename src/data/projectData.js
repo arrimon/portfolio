@@ -2,6 +2,7 @@
 import techElevateImg from '../assets/projects/tech-elevate.png'; 
 import githubTrackerImg from '../assets/projects/github-issue.png'; 
 import digiToolsImg from '../assets/projects/digitools.png'; 
+import englishJanalaImg from '../assets/projects/english-janala.png'; 
 
 // Project data list with categories
 export const projectData = [
@@ -26,14 +27,14 @@ export const projectData = [
         codeLink: "https://github.com/arrimon/github-issue-tracker"
     },
     {
-        title: "E-Commerce Store",
-        desc: "A full-featured online store with cart, checkout, and payment integration for seamless shopping.",
-        tags: ["React", "Node.js", "MongoDB", "Stripe"],
+        title: "English জানালা",
+        desc: "আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ",
+        tags: ["Core JS", "Tailwind", "Daigy UI", "Fetch API"],
         category: "Frontend",
         color: "bg-green-600",
-        image: null,
-        liveLink: "#",
-        codeLink: "#"
+        image: englishJanalaImg,
+        liveLink: "https://webapp-english-janala.netlify.app/",
+        codeLink: "https://github.com/arrimon/english-janala-with-js"
     },
     {
         title: "DigiTools",

@@ -57,7 +57,7 @@ const ProjectCard = ({ project, index }) => {
 
       {/* Image Section */}
       <div className="p-2">
-        <div className={`${project.color} h-56 relative overflow-hidden rounded-2xl`}>
+        <div className={`${project.color} h-[180px] relative overflow-hidden rounded-2xl`}>
           {project.image ? (
             <img
               src={project.image}
@@ -76,6 +76,29 @@ const ProjectCard = ({ project, index }) => {
           )}
 
           <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[var(--surface)] to-transparent" />
+
+          {/* Hover Icons - Bottom Right of Image */}
+          <div className="absolute bottom-3 right-3 flex gap-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out z-20">
+            <a
+              href={project.codeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-9 h-9 rounded-full bg-[var(--surface)]/90 backdrop-blur-sm border border-[var(--border)] text-[var(--text-primary)] shadow-lg hover:bg-[var(--text-primary)] hover:text-[var(--surface)] hover:scale-110 transition-all duration-300"
+              title="View Code"
+            >
+              <Github size={16} />
+            </a>
+
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-9 h-9 rounded-full bg-[var(--accent)]/90 backdrop-blur-sm text-white shadow-lg hover:bg-[var(--accent)] hover:scale-110 transition-all duration-300"
+              title="View Live"
+            >
+              <ExternalLink size={16} />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -106,30 +129,9 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Description */}
-        <p className="text-[var(--text-muted)] text-sm leading-relaxed mb-16 h-12 overflow-hidden">
+        <p className="text-[var(--text-muted)] text-sm leading-relaxed mb-6 h-12 overflow-hidden">
           {project.desc}
         </p>
-
-        {/* Hover Icons */}
-        <div className="absolute bottom-6 left-6 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out">
-          <a
-            href={project.codeLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--surface)] border border-[var(--border)] text-[var(--text-primary)] shadow-md hover:bg-[var(--text-primary)] hover:text-[var(--surface)] transition-colors duration-300"
-          >
-            <Github size={16} />
-          </a>
-
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-[var(--accent)] text-white shadow-md hover:bg-[var(--accent)]/90 transition-colors duration-300"
-          >
-            <ExternalLink size={16} />
-          </a>
-        </div>
       </div>
     </div>
   );
