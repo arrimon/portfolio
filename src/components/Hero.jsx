@@ -81,8 +81,9 @@ const Hero = () => {
       <div className="flex flex-col sm:flex-row gap-5">
 
         <a
-            href="https://drive.google.com/uc?export=download&id=17fEeopL-O4BjqQ5NMXJmigRbOlqgdBRZ"
-            download
+            href="https://drive.google.com/file/d/1SxZfGxPQzWoF2GbNutO3_kTqQF-zF899/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             className="
                 group flex items-center justify-center gap-2
                 px-8 py-4
@@ -99,23 +100,26 @@ const Hero = () => {
         </a>
 
         {/* Secondary */}
-        <button className="
-          group flex items-center justify-center gap-2
-          px-8 py-4
-          bg-[var(--surface)]
-          border border-[var(--border)]
-          text-[var(--text-primary)]
-          rounded-2xl
-          font-bold
-          hover:bg-[var(--accent)]/10
-          transition-all
-        ">
+        <a
+          href="#projects"
+          className="
+            group flex items-center justify-center gap-2
+            px-8 py-4
+            bg-[var(--surface)]
+            border border-[var(--border)]
+            text-[var(--text-primary)]
+            rounded-2xl
+            font-bold
+            hover:bg-[var(--accent)]/10
+            transition-all
+          "
+        >
           View Projects
           <ArrowRight
             size={20}
             className="transition-transform group-hover:translate-x-1"
           />
-        </button>
+        </a>
 
       </div>
 

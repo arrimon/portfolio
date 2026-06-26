@@ -8,30 +8,36 @@ const categories = ['ALL', 'Full Stack', 'Frontend', 'Wordpress', 'APP'];
 
 const ProjectCard = ({ project, index }) => {
   const cardRef = useRef(null);
+  const rafRef = useRef(null);
 
   const handleMouseMove = (e) => {
     const card = cardRef.current;
     if (!card) return;
 
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
 
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
+    rafRef.current = requestAnimationFrame(() => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-    const rotateX = ((y - centerY) / centerY) * -8;
-    const rotateY = ((x - centerX) / centerX) * 8;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
 
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02,1.02,1.02)`;
-    card.style.setProperty('--mouse-x', `${x}px`);
-    card.style.setProperty('--mouse-y', `${y}px`);
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01,1.01,1.01)`;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
   };
 
   const handleMouseLeave = () => {
     const card = cardRef.current;
     if (!card) return;
 
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
     card.style.transform =
       'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
   };
@@ -46,39 +52,39 @@ const ProjectCard = ({ project, index }) => {
         animationDelay: `${index * 120}ms`,
         transformStyle: 'preserve-3d',
         willChange: 'transform',
-        transition: 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)', // smoother
+        transition: 'transform 5.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 1.2s cubic-bezier(0.23, 1, 0.32, 1)',
       }}
     >
       {/* Spotlight */}
-      <div className="spotlight pointer-events-none absolute inset-0 z-10 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="spotlight pointer-events-none absolute inset-0 z-10 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] ease-out" />
 
       {/* Top line */}
       <div className="absolute top-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-white/30 to-transparent z-20" />
 
       {/* Image Section */}
       <div className="p-2">
-        <div className={`${project.color} h-[180px] relative overflow-hidden rounded-2xl`}>
+        <div className={`${project.color} h-[140px] relative overflow-hidden rounded-xl`}>
           {project.image ? (
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-out"
+              className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-[1500ms] ease-out"
             />
           ) : (
             <div className="flex items-center justify-center h-full">
-              <span className="text-white text-7xl font-black z-10 group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-500 ease-out">
+              <span className="text-white text-7xl font-black z-10 group-hover:scale-125 group-hover:-translate-y-2 transition-all duration-[1500ms] ease-out">
                 {project.title[0]}
               </span>
 
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full group-hover:scale-150 group-hover:opacity-50 transition-all duration-700" />
-              <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-black/5 rounded-full group-hover:scale-150 transition-all duration-700 delay-75" />
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full group-hover:scale-150 group-hover:opacity-50 transition-all duration-[1500ms] ease-out" />
+              <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-black/5 rounded-full group-hover:scale-150 transition-all duration-[1500ms] ease-out delay-200" />
             </div>
           )}
 
           <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[var(--surface)] to-transparent" />
 
           {/* Hover Icons - Bottom Right of Image */}
-          <div className="absolute bottom-3 right-3 flex gap-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-out z-20">
+          <div className="absolute bottom-3 right-3 flex gap-2 opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-[1000ms] ease-out z-20">
             <a
               href={project.codeLink}
               target="_blank"
@@ -103,14 +109,14 @@ const ProjectCard = ({ project, index }) => {
       </div>
 
       {/* Body */}
-      <div className="p-6 pt-4">
+      <div className="p-5 pt-3">
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((tag, i) => (
             <span
               key={tag}
-              className="text-[10px] font-bold text-[var(--accent)] bg-[var(--accent)]/10 px-3 py-1 rounded-full uppercase tracking-tighter group-hover:bg-[var(--accent)]/20 transition-colors duration-300"
-              style={{ transitionDelay: `${i * 40}ms` }}
+              className="text-[10px] font-bold text-[var(--accent)] bg-[var(--accent)]/10 px-3 py-1 rounded-full uppercase tracking-tighter group-hover:bg-[var(--accent)]/20 transition-colors duration-[700ms]"
+              style={{ transitionDelay: `${i * 80}ms` }}
             >
               {tag}
             </span>
@@ -118,18 +124,18 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Title */}
-        <div className="flex items-start justify-between mb-3">
-          <h3 className="text-2xl font-bold text-[var(--text-primary)] group-hover:translate-x-0.5 transition-transform duration-300">
+        <div className="flex items-start justify-between mb-2">
+          <h3 className="text-xl font-bold text-[var(--text-primary)] group-hover:translate-x-1.5 transition-transform duration-[1200ms] ease-out">
             {project.title}
           </h3>
           <ArrowUpRight
             size={20}
-            className="text-[var(--text-muted)] mt-1 opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 ease-out flex-shrink-0"
+            className="text-[var(--text-muted)] mt-1 opacity-0 -translate-x-3 translate-y-3 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-[1200ms] ease-out flex-shrink-0"
           />
         </div>
 
         {/* Description */}
-        <p className="text-[var(--text-muted)] text-sm leading-relaxed mb-6 h-12 overflow-hidden">
+        <p className="text-[var(--text-muted)] text-sm leading-relaxed mb-4 line-clamp-2">
           {project.desc}
         </p>
       </div>
@@ -229,7 +235,7 @@ const Projects = () => {
           <div className="flex justify-center mt-12">
             <button
               onClick={() => setShowAll(true)}
-              className="show-more-btn flex items-center gap-2 px-8 py-4 bg-[var(--surface)] border-2 border-[var(--accent)] text-[var(--accent)] rounded-full font-bold text-base hover:bg-[var(--accent)] hover:text-white hover:shadow-lg hover:shadow-[var(--accent)]/30 transition-all duration-300 ease-out"
+              className="show-more-btn flex items-center gap-2 px-8 py-4 bg-[var(--surface)] border-[var(--accent)] text-[var(--accent)] rounded-full font-bold text-base hover:bg-[var(--accent)] hover:text-white hover:shadow-lg hover:shadow-[var(--accent)]/30 transition-all duration-300 ease-out"
             >
               <span>Show More Projects</span>
               <ChevronDown size={20} />
