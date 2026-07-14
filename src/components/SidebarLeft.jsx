@@ -55,8 +55,8 @@ const SidebarLeft = () => {
       </div>
 
       <div className="mt-6">
-        <h2 className="text-2xl font-bold text-[var(--text-primary)]">Rayhan Rimon</h2>
-        <p className="text-[var(--accent)] font-semibold mt-1">Full Stack Developer <span>(Frontend Focused)</span></p>
+        <h2 className="text-2xl font-bold text-[var(--text-primary)]">Abu Rayhan Rimon</h2>
+        <p className="text-[var(--accent)] font-semibold mt-1">Full Stack Developer</p>
         <p className="text-[var(--text-muted)] text-sm mt-3 bg-[var(--surface)] py-1 px-3 rounded-full">dev.rrimon@gmail.com</p>
       </div>
 

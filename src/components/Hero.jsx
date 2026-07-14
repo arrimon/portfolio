@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, ArrowRight } from 'lucide-react';
+import TypingText from './TypingText';
 
 const Hero = () => {
   return (
@@ -55,9 +56,7 @@ const Hero = () => {
         mb-10
         max-w-2xl
       ">
-        A Frontend Developer who bridges the gap between complex engineering
-        and user-centric design. Currently engineering high-performance
-        systems at
+        AI-Enabled <TypingText words={["Full Stack", "React", "Laravel", "Next.js"]} /> Developer specializing in Laravel and React.js, focused on engineering high-performance systems and seamless user experiences at 
 
         <a
           href="https://www.race.net.bd/"
@@ -81,7 +80,7 @@ const Hero = () => {
       <div className="flex flex-col sm:flex-row gap-5">
 
         <a
-            href="https://drive.google.com/file/d/1SxZfGxPQzWoF2GbNutO3_kTqQF-zF899/view?usp=sharing"
+            href="https://drive.google.com/file/d/1ih8Tlcdbgg7mNV9Q1E3L-bHIcb3uOH1D/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="

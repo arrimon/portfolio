@@ -5,7 +5,7 @@ import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
 
 const experienceData = [
   {
-    role: 'Full Stack Developer (Frontend Focus)',
+    role: 'Full Stack Developer (React + Laravel)',
     company: 'Race Online Ltd',
     companyUrl: 'https://www.race.net.bd/',
     location: 'Dhaka, Bangladesh',
